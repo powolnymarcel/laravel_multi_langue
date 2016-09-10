@@ -1,6 +1,8 @@
 <?php
 
+
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Model;
 
 class DatabaseSeeder extends Seeder
 {
@@ -11,6 +13,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        //Model::unguard() does temporarily disable the mass assignment protection of the model, so you can seed all model properties.
+
+        Model::unguard();
+         $this->call(LanguageSeeder::class);
+        Model::reguard();
     }
 }
