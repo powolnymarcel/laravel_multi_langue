@@ -22,6 +22,8 @@ class Controller extends BaseController
             $lang = (Session::get('language') != "" ? Session::get('language') : CORE_LANG);
             App::setLocale($lang);
         }
+
+        //Variable langage GLOBALE, partagées avec toutes les vues
         $languages = Language::orderBy('folder','asc')->get();
         View::share('languages',$languages);
 

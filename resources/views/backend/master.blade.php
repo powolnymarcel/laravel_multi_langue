@@ -22,6 +22,8 @@
 
     <!-- Custom Fonts -->
     <link href="{{asset('backend/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{asset('sweetalert/dist/sweetalert.css')}}">
+    @yield('css')
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -40,12 +42,29 @@
 @include('backend.layouts.navbar')
     <div id="page-wrapper">
         <div class="container-fluid">
+            @include('backend.errors.message_error')
             @yield('content')
-
-
         </div>
         <!-- /.container-fluid -->
+        <div class="modal fade" id="poma-modal"  role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" data-dismiss="modal" aria-hidden="true" class="close">
+                            x
+                        </button>
+                        <h4 class="modal-title">
+                            Modal Title
+                        </h4>
+                    </div>
 
+                    <div class="modal-body" id="poma-modal-content">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
     <!-- /#page-wrapper -->
 
@@ -62,7 +81,10 @@
 <script src="{{asset('backend/js/plugins/morris/raphael.min.js')}}"></script>
 <script src="{{asset('backend/js/plugins/morris/morris.min.js')}}"></script>
 <script src="{{asset('backend/js/plugins/morris/morris-data.js')}}"></script>
-
+<script src="{{asset('sweetalert/dist/sweetalert.min.js')}}"></script>
+<script src="{{asset('poma.js')}}"></script>
+@yield('js')
+@yield('scripts')
 </body>
 
 </html>

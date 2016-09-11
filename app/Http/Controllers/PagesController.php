@@ -18,7 +18,7 @@ class PagesController extends Controller
     }
 
     public function getBootstrapselements(){
-        return view('backend.pages.bootstrapelements');
+        return view('backend.pages.bootstrapselements');
     }
 
     public function getBlank(){
@@ -30,7 +30,8 @@ class PagesController extends Controller
     }
 
     public function getBootstrapsgrid(){
-        return view('backend.pages.grids');
+        return view('backend.pages.bootstrapsgrid');
     }
+
 
 }

@@ -14,12 +14,18 @@
 
 Route::resource('admin','BackendController');
 Route::group(['prefix'=>'pages'],function(){
-    route::get('form','PagesController@getForm');
+    route::get('form','PagesController@getForms');
     route::get('bootstrapselements','PagesController@getBootstrapselements');
     route::get('tables','PagesController@getTables');
     route::get('bootstrapsgrid','PagesController@getBootstrapsgrid');
-
+    route::get('addtranslation','PagesController@getAddtranslation');
+    route::get('listtranslation','PagesController@getListtranslation');
+    route::post('addtranslation','ConfigController@getAddtranslation');
+    Route::controllers([
+            'config'=>'ConfigController'
+    ]);
 });
+
 
 Route::controller('language','LanguageController');
 
